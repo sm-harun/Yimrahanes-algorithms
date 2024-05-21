@@ -1,0 +1,19 @@
+body {
+	--numOfCells: 10;
+
+	height: 100%;
+	background-color: #333;
+	
+	display: grid;
+	grid-template-columns: repeat(var(--numOfCells), 1fr);
+	grid-template-rows: repeat(var(--numOfCells), 1fr);
+}
+
+.cell {
+	border: 1px solid white;
+	color: white;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
