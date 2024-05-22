@@ -8,7 +8,21 @@ button?.onclick = () => {
 	
 	dialog?.close();
 	
-	displaySecAlgorithm(yimroSecondAlgorithm(parseInt(input?.value || "0", 10)));
+	let placeValue = parseInt(input?.value || "0", 10);
+
+	if (document.querySelector("input[name=algorithm]:checked")) {
+
+		switch(document.querySelector<HTMLInputElement>("input[name=algorithm]:checked")?.value) {
+
+			case "first":
+				yimroFirstAlgorithm(placeValue);
+				break;
+
+			case "second":
+				displaySecAlgorithm(yimroSecondAlgorithm(placeValue));
+				break;
+		}
+	}
 }
 
 function yimroFirstAlgorithm(placeValue: number): void {
